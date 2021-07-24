@@ -1,0 +1,8 @@
+ ./youtube-dl.exe --proxy 127.0.0.1:8087 -f bestvideo+bestaudio --merge-output-format mp4 https://www.youtube.com/watch?v=bXwhOP9C5cU
+去掉音轨
+./ffmpeg.exe -i ./a.mp4 -c:v copy -an ./a1.mp4
+不重新编码音频合并
+./ffmpeg.exe -i ./a1.mp4 -i ./a.webm -c:v copy ./a2.mp4
+重新编码音频合并
+./ffmpeg.exe -i ./a1.mp4 -i ./a.webm -c:v copy -c:a aac ./a2.mp4
+
